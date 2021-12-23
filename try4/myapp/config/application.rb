@@ -1,20 +1,12 @@
 require_relative "boot"
-require 'rbconfig'
 
-OSVERSION = RbConfig::CONFIG['host_os']
-CPU = RbConfig::CONFIG['host_cpu']
-ARCH = RbConfig::CONFIG['arch']
-
-puts "OS: #{OSVERSION}"
-puts "CPU #{CPU}"
-puts "Arch: #{ARCH}"
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module OpenFlights
+module Myapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
